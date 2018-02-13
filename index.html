@@ -7,7 +7,46 @@
     <title>Document</title>
 </head>
 <body>
+    <div ng-controller="MyCtrl">
+        {{myval}}
+        <input type="text" ng-model="myval">
+        <button ng-click="onClick()">click me</button>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>age</th>
+                        <th></th>                   
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr ng-repeat="stu in students">
+                       <td>{{stu.name|customName:'hello'}}
+
+                       </td>
+                       
+                       <td> {{stu.age}}</td>
+                       <td> {{stu.sen}}</td>
+                      <td>
+                            <button ng-click="views(stu)">view</button>
+                      </td>
+                       <td></td>
+                   </tr>
+                </tbody>
+            </table>     
+    
+
+    <div>
+        <h2>student details</h2>
+        <p>{{myvalue.name}}</p>
+        <p>{{myvalue.age}}</p>
+    </div>
+  
+    </div>
     <script src="angular.js"></script>
     <script src="app.js"></script>
+    <script src="app.service.js"></script>
+    <script src="app.filter.js"></script>
 </body>
 </html>

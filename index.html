@@ -7,11 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+        <!-- <student-details my-title="Hello"></student-details> -->
+        
     <div ng-controller="MyCtrl">
+        <ui-view></ui-view>
         {{myval}}
         <input type="text" ng-model="myval">
         <button ng-click="onClick()">click me</button>
         
+        <student-details current-student="myVals"></student-details>
             <table>
                 <thead>
                     <tr>
@@ -29,7 +33,7 @@
                        <td> {{stu.age}}</td>
                        <td> {{stu.sen}}</td>
                       <td>
-                            <button ng-click="views(stu)">view</button>
+                            <button ng-click="viewDetails(stu)">view</button>
                       </td>
                        <td></td>
                    </tr>
@@ -37,16 +41,19 @@
             </table>     
     
 
-    <div>
+    <!-- <div>
         <h2>student details</h2>
         <p>{{myvalue.name}}</p>
         <p>{{myvalue.age}}</p>
-    </div>
+    </div> -->
   
     </div>
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="app.service.js"></script>
     <script src="app.filter.js"></script>
+    <script src="app.components.js"></script>
+    <script src="angular-ui-router.js"></script>
+
 </body>
 </html>
